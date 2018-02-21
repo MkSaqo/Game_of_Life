@@ -1,15 +1,26 @@
 var matrix = matrica(15, 15);
 var side = 70;
 var grassArr = [];
-var xkArr = [];
 var patArr = [];
+var xkArr = [];
 var xotakerakerArr = [];
 var carukyanArr = [];
+ 
+function end_level(){
+    grassArr = [];
+    xkArr = [];
+    xotakerakerArr = [];
+    patArr = [];
+    carukyanArr = [];
+
+}
+
+
 function setup() {
     createCanvas(matrix.length * side, matrix[0].length * side);
     background("grey");
-
-    noStroke()
+    noStroke();
+  
     for (var y = 0; y < matrix.length; ++y) {
         for (var x = 0; x < matrix[y].length; ++x) {
             if (matrix[y][x] == 1) {
@@ -36,6 +47,7 @@ function setup() {
 
 function draw() {
     var fr1 = document.getElementById("val").value;
+    document.getElementById("val_p").innerHTML = fr1;
     var fr = parseInt(fr1);
     frameRate(fr);
     for (var y = 0; y < matrix.length; ++y) {
@@ -64,7 +76,7 @@ function draw() {
             }
 
             else if (matrix[y][x] == 5) {
-                if(matrix[y][x]==3)
+                // if(matrix[y][x]==3)
                 fill("lightblue");
                 ellipse(x * side + side / 2, y * side + side / 2, side, side);
             }
