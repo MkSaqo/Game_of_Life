@@ -1,5 +1,6 @@
+var KendaniEak = require("./KendaniEak.js");
 
-class Xotakeraker extends KendaniEak{
+module.exports = class Xotakeraker extends KendaniEak{
 
     yntrelVandak(ch){
         super.stanalNorKordinatner();

@@ -1,4 +1,4 @@
-class KendaniEak {
+module.exports =  class KendaniEak {
     constructor(x, y, index) {
         this.x = x;
         this.y = y;

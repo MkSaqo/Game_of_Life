@@ -1,5 +1,5 @@
-
-class Pat {
+var KendaniEak = require("./KendaniEak.js");
+module.exports = class Pat {
     constructor(x, y) {
         this.x = x;
         this.y = y;

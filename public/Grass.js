@@ -1,4 +1,5 @@
-class Grass extends KendaniEak {
+var KendaniEak = require("./KendaniEak.js");
+module.exports = class Grass extends KendaniEak {
     bazmanal() {
         var norVandak = random(this.yntrelVandak(0));
         this.multiply++;

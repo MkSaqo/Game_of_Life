@@ -1,19 +1,6 @@
-var matrix = matrica(15, 15);
+//  var socket = io.connect('localhost:300  0');
+ var matrix = matrica(15, 15);
 var side = 70;
-var grassArr = [];
-var patArr = [];
-var xkArr = [];
-var xotakerakerArr = [];
-var carukyanArr = [];
- 
-function end_level(){
-    grassArr = [];
-    xkArr = [];
-    xotakerakerArr = [];
-    patArr = [];
-    carukyanArr = [];
-
-}
 
 
 function setup() {
@@ -21,27 +8,27 @@ function setup() {
     background("grey");
     noStroke();
   
-    for (var y = 0; y < matrix.length; ++y) {
-        for (var x = 0; x < matrix[y].length; ++x) {
-            if (matrix[y][x] == 1) {
-                grassArr.push(new Grass(x, y));
-            }
-            else if (matrix[y][x] == 2) {
-                xkArr.push(new Xotaker(x, y));
-            }
-            else if (matrix[y][x] == 3) {
-                patArr.push(new Pat(x, y));
-            }
+    // for (var y = 0; y < matrix.length; ++y) {
+    //     for (var x = 0; x < matrix[y].length; ++x) {
+    //         if (matrix[y][x] == 1) {
+    //             grassArr.push(new Grass(x, y));
+    //         }
+    //         else if (matrix[y][x] == 2) {
+    //             xkArr.push(new Xotaker(x, y));
+    //         }
+    //         else if (matrix[y][x] == 3) {
+    //             patArr.push(new Pat(x, y));
+    //         }
 
-            else if (matrix[y][x] == 4) {
-                xotakerakerArr.push(new Xotakeraker(x, y));
-            }
+    //         else if (matrix[y][x] == 4) {
+    //             xotakerakerArr.push(new Xotakeraker(x, y));
+    //         }
 
-            else if (matrix[y][x] == 5) {
-                carukyanArr.push(new Carukyan(x, y));
-            }
-        }
-    }
+    //         else if (matrix[y][x] == 5) {
+    //             carukyanArr.push(new Carukyan(x, y));
+    //         }
+    //     }
+    // }
 }
 
 
@@ -83,24 +70,24 @@ function draw() {
             
         }
     }
-    for (var i in grassArr) {
-        grassArr[i].bazmanal();
-    }
+//     for (var i in grassArr) {
+//         grassArr[i].bazmanal();
+//     }
 
-    for (var i in xkArr) {
-        xkArr[i].utel();
-    }
-    for (var i in xotakerakerArr) {
-        xotakerakerArr[i].utel();
-    }
+//     for (var i in xkArr) {
+//         xkArr[i].utel();
+//     }
+//     for (var i in xotakerakerArr) {
+//         xotakerakerArr[i].utel();
+//     }
 
-    for (var i in patArr) {
-        patArr[i].pat_sharjvel();
-    }
+//     for (var i in patArr) {
+//         patArr[i].pat_sharjvel();
+//     }
 
-    for (var i in carukyanArr) {
-        carukyanArr[i].baregorcutun();
-    }
+//     for (var i in carukyanArr) {
+//         carukyanArr[i].baregorcutun();
+//     }
     
 }
 

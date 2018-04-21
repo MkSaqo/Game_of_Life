@@ -1,4 +1,5 @@
-class Carukyan extends KendaniEak{
+var KendaniEak = require("./KendaniEak.js");
+module.exports = class Carukyan extends KendaniEak{
 
      yntrelVandak(ch){
         super.stanalNorKordinatner();
