@@ -8,34 +8,60 @@ var KendaniEak = require("./public/KendaniEak.js");
 var Grass = require("./public/Grass.js");
 var Xotaker = require("./public/Xotaker.js");
 var Pat = require("./public/Pat.js");
+var Script = require("./public/script.js");
 var Xotakeraker = require("./public/Xotakeraker.js");
 var Carukyan = require("./public/Carukyan.js");
-var Script = require("./public/Script.js");
 
-// Define the port to run on
-app.set('port', process.env.PORT || 3000);
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Listen for requests
-var server = app.listen(app.get('port'), function() {
-  var port = server.address().port;
-  console.log('Magic happens on port ' + port);
-}); 
 
 var grassArr = [];
 var patArr = [];
 var xkArr = [];
 var xotakerakerArr = [];
 var carukyanArr = [];
+var matrix = matrica(15,15);
+app.use(express.static('.'));
 
+app.get('/', function(req, res) {
+    res.redirect('/public/index.html');
+})
+
+server.listen(3000, function() {
+    console.log("Nikol Varchapet");
+})
 
 io.on('connection', function (socket) {   
-    console.log(12) 
     // socket.on("send message", function (data) {
-        // messages.push(data)
-        socket.emit("display message", data);
+    //     messages.push(data)
+    
+    socket.emit("display message", matrix);
     // })
 
 });
 
+
+
+
+
+
+function matrica(n, m) {
+        var matrix = [];
+        for (var i = 0; i < n; i++) {
+            matrix.push([]);
+            for (var j = 0; j < m; j++) {
+                matrix[i][j] = Math.floor(Math.random() * 2);
+            }
+        }
+
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 2;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 2;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 2;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 2;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 3;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 5;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 5;
+        matrix[Math.floor(Math.random() * matrix.length)][Math.floor(Math.random() * matrix[0].length)] = 5;
+        matrix[Math.floor(matrix.length / 4)][Math.floor(Math.random() * matrix[0].length)] = 4;
+        matrix[Math.floor(matrix.length - 3)][Math.floor(Math.random() * matrix[0].length)] = 4;
+        matrix[Math.floor(matrix.length - 7)][Math.floor(Math.random() * matrix[0].length)] = 4;
+        return matrix;
+    }
